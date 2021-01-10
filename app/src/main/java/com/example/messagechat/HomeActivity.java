@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.messagechat.Adapter.NavigationAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
@@ -15,11 +16,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         ViewPager2 viewPager2 = findViewById(R.id.view_paper2);
+        viewPager2.setAdapter(new NavigationAdapter(this));
         TabLayout navigation = findViewById(R.id.navigation);
 
+
         navigation.addTab(navigation.newTab().setIcon(R.drawable.home));
-        navigation.addTab(navigation.newTab().setIcon(R.drawable.home));
-        navigation.addTab(navigation.newTab().setIcon(R.drawable.home));
+        navigation.addTab(navigation.newTab().setIcon(R.drawable.chat));
+        navigation.addTab(navigation.newTab().setIcon(R.drawable.user));
 
         navigation.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
