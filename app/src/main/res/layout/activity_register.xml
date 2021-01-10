@@ -40,7 +40,7 @@
         <EditText
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:hint="Email"
             android:textSize="20dp"
             android:layout_marginTop="50dp"
@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/txtPwd"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:hint="Mật khẩu"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
@@ -61,13 +61,14 @@
             android:text="Đăng ký"
             android:textAllCaps="false"
             android:textSize="15dp"
-            android:background="@drawable/button"
+            android:backgroundTint="#3149E4"
             android:layout_marginTop="20dp"
             android:layout_gravity="right"
             android:layout_width="match_parent"
-            android:layout_height="45dp"/>
+            android:layout_height="60dp"/>
 
         <TextView
+            android:id="@+id/haveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bạn đã có tài khoản"

@@ -1,31 +1,98 @@
 package com.example.messagechat;
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-
     private Button btnLogin;
-    private TextView btnRegister;
+    private EditText edtEmail, editPassword;
+    private TextView btnRegisterNow;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    SharedPreferences sharedpreferences ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegisterNow);
+        edtEmail = findViewById(R.id.txtEmail);
+        editPassword = findViewById(R.id.txtPwd);
+        btnRegisterNow = findViewById(R.id.btnRegisterNow);
+        sharedpreferences = getSharedPreferences("SESSION", Context.MODE_PRIVATE);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = edtEmail.getText().toString().trim();
+                String password = editPassword.getText().toString().trim();
+                if (email.isEmpty()) {
+                    edtEmail.setError("Email is required");
+                }
+                if (password.isEmpty()) {
+                    edtEmail.setError("Password is required");
+                }
 
+                Map<String, Object> data = new HashMap<>();
+                data.put("email", email);
+                data.put("password", password);
+
+                db.collection("Users")
+                        .whereEqualTo("email", email)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        if (email.equals(document.getData().get("email").toString())
+                                                && password.equals(document.getData().get("password").toString())) {
+                                            //Lưu email, id vào session
+                                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                                            editor.putString("email", document.getData().get("email").toString());
+                                            editor.putString("_id", document.getId());
+                                            editor.commit();
+
+                                            Toast.makeText(LoginActivity.this, "Login success",
+                                                    Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                            startActivity(intent);
+                                        } else {
+                                            Toast.makeText(LoginActivity.this, "Login failed",
+                                                    Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Login failed",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
             }
         });
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegisterNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
