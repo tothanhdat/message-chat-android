@@ -72,9 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                                             //Lưu email, id vào session
                                             SharedPreferences.Editor editor = sharedpreferences.edit();
                                             editor.putString("email", document.getData().get("email").toString());
+                                            editor.putString("fullname", document.getData().get("fullname").toString());
+                                            editor.putString("phone", document.getData().get("phone").toString());
                                             editor.putString("_id", document.getId());
                                             editor.commit();
-
                                             Toast.makeText(LoginActivity.this, "Login success",
                                                     Toast.LENGTH_LONG).show();
                                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);

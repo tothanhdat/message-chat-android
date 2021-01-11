@@ -126,7 +126,7 @@
                         android:text="SỐ ĐIỆN THOẠI"/>
                     <TextView
                         android:layout_alignParentRight="true"
-                        android:id="@+id/sdtdt"
+                        android:id="@+id/phonedt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="17dp"

@@ -47,6 +47,25 @@
             android:paddingLeft="10dp"/>
 
         <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Số điện thoại"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/txtFullname"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Họ tên"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"/>
+
+        <EditText
             android:id="@+id/txtPwd"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -61,7 +80,7 @@
             android:text="Đăng ký"
             android:textAllCaps="false"
             android:textSize="15dp"
-            android:backgroundTint="#3149E4"
+            android:backgroundTint="@color/button"
             android:layout_marginTop="20dp"
             android:layout_gravity="right"
             android:layout_width="match_parent"

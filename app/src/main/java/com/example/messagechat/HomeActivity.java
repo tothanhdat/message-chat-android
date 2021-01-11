@@ -3,17 +3,23 @@ package com.example.messagechat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.EditText;
 
 import com.example.messagechat.Adapter.NavigationAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
+
+
 
         ViewPager2 viewPager2 = findViewById(R.id.view_paper2);
         viewPager2.setAdapter(new NavigationAdapter(this));

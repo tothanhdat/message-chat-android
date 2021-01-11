@@ -52,11 +52,9 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         SharedPreferences shared = getSharedPreferences("SESSION", MODE_PRIVATE);
-        name = (shared.getString("email", ""));
-        Log.d(name, "onCreate: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        name = (shared.getString("fullname", ""));
         //name = getIntent().getStringExtra("name");
         initiateSocketConnection();
-
     }
 
     private void initiateSocketConnection() {

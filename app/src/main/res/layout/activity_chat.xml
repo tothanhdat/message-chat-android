@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_design"
         android:padding="8dp"
-        android:hint="Message..."
+        android:hint="Nhập gì đó..."
         android:textSize="16sp"
         android:layout_toStartOf="@id/sendBtn"
         android:layout_alignParentBottom="true"
@@ -31,14 +31,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:text="Gửi"
         android:padding="10dp"
         android:visibility="invisible"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="16dp"
         android:id="@+id/sendBtn"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimary2"
         android:layout_alignParentRight="true" />
 
     <ImageView
@@ -51,7 +51,7 @@
         android:layout_marginBottom="16dp"
         android:id="@+id/pickImgBtn"
         android:layout_alignParentEnd="true"
-        app:tint="@color/colorPrimary"
+        app:tint="@color/colorPrimary2"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@id/messageEdit" />
 

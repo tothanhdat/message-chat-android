@@ -61,7 +61,7 @@
             android:text="Đăng nhập"
             android:textAllCaps="false"
             android:textSize="15dp"
-            android:backgroundTint="#3149E4"
+            android:backgroundTint="@color/button"
 
             android:layout_marginTop="20dp"
             android:layout_gravity="right"
