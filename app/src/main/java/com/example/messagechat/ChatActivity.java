@@ -38,7 +38,7 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
     private String name;
     private WebSocket webSocket;
-    private String SERVER_PATH = "ws://192.168.1.9:3000" +
+    private String SERVER_PATH = "wss://message-android-chat.herokuapp.com" +
             "";
     private EditText messageEdit;
     private View sendBtn, pickImgBtn;
