@@ -14,10 +14,9 @@ import android.widget.Button;
 import com.example.messagechat.ChatActivity;
 import com.example.messagechat.LoginActivity;
 import com.example.messagechat.R;
+import static android.content.Context.MODE_PRIVATE;
 
 public class MessageFragment extends Fragment {
-    public static final int MODE_PRIVATE = 0x0000;
-    Button moveActivityChat;
     String fullname;
     SharedPreferences sharedpreferences;
     @Override

@@ -73,11 +73,13 @@ public class LoginActivity extends AppCompatActivity {
                                             String emailDb = document.getData().get("email").toString();
                                             String fullnameDb = document.getData().get("fullname").toString();
                                             String phoneDb = document.getData().get("phone").toString();
+                                            String idDb = document.getId();
 
                                             SharedPreferences.Editor editor = sharedpreferences.edit();
                                             editor.putString("email", emailDb);
                                             editor.putString("fullname", fullnameDb);
                                             editor.putString("phone", phoneDb);
+                                            editor.putString("id", idDb);
 
                                             Log.d(emailDb, "emailDb:");
                                             Log.d(fullnameDb, "fullnameDb:");

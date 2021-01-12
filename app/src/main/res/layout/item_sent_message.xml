@@ -5,16 +5,16 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:layout_marginStart="64dp"
-        android:padding="8dp"
+        android:padding="13dp"
         android:id="@+id/sentTxt"
         android:textSize="16sp"
         android:background="#cccccc"
-        android:text="Hello this is a sample message"
+        android:text="Người gửi gửi đi"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="64dp" />
 
