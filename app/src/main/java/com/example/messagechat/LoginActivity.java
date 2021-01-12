@@ -70,23 +70,32 @@ public class LoginActivity extends AppCompatActivity {
                                         if (email.equals(document.getData().get("email").toString())
                                                 && password.equals(document.getData().get("password").toString())) {
                                             //Lưu email, id vào session
+                                            String emailDb = document.getData().get("email").toString();
+                                            String fullnameDb = document.getData().get("fullname").toString();
+                                            String phoneDb = document.getData().get("phone").toString();
+
                                             SharedPreferences.Editor editor = sharedpreferences.edit();
-                                            editor.putString("email", document.getData().get("email").toString());
-                                            editor.putString("fullname", document.getData().get("fullname").toString());
-                                            editor.putString("phone", document.getData().get("phone").toString());
-                                            editor.putString("_id", document.getId());
-                                            editor.commit();
-                                            Toast.makeText(LoginActivity.this, "Login success",
+                                            editor.putString("email", emailDb);
+                                            editor.putString("fullname", fullnameDb);
+                                            editor.putString("phone", phoneDb);
+
+                                            Log.d(emailDb, "emailDb:");
+                                            Log.d(fullnameDb, "fullnameDb:");
+                                            Log.d(phoneDb, "phoneDb:");
+
+                                            //editor.putString("_id", document.getId());
+                                            editor.apply();
+                                            Toast.makeText(LoginActivity.this, "Đăng nhập thành công",
                                                     Toast.LENGTH_LONG).show();
                                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                             startActivity(intent);
                                         } else {
-                                            Toast.makeText(LoginActivity.this, "Login failed",
+                                            Toast.makeText(LoginActivity.this, "Thất bại",
                                                     Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 } else {
-                                    Toast.makeText(LoginActivity.this, "Login failed",
+                                    Toast.makeText(LoginActivity.this, "Thất bại",
                                             Toast.LENGTH_LONG).show();
                                 }
                             }

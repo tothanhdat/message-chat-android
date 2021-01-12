@@ -110,7 +110,7 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
             runOnUiThread(() -> {
                 Toast.makeText(ChatActivity.this,
-                        "Socket Connection Successful!",
+                        "Socket Connection Successful! Wellcome " + name,
                         Toast.LENGTH_SHORT).show();
 
                 initializeView();

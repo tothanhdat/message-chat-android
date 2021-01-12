@@ -152,6 +152,7 @@
                         android:text="13/05/1999"/>
                 </RelativeLayout>
                 <Button
+                    android:id="@+id/btnUpdateBasic"
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"

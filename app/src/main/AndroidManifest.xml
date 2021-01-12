@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.messagechat" >
+    package="com.example.messagechat">
 
     <application
         android:allowBackup="true"
@@ -8,15 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MessageChat" >
-        <activity android:name=".ChatActivity" >
-        </activity>
-        <activity android:name=".HomeActivity" >
-
-        </activity>
+        android:theme="@style/Theme.MessageChat"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".UpdateInfo"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
