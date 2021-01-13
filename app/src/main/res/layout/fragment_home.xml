@@ -6,11 +6,62 @@
     tools:context=".Fragment.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home"
-        android:textSize="30dp"
-        android:gravity="center"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/border_home"/>
+
+        <TextView
+            android:layout_marginTop="80dp"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#404040"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"
+            android:text="Message App Android"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/des"
+            android:layout_below="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#595959"
+            android:textStyle=""
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:text="Ứng dụng chat tiện ích"/>
+
+        <ImageView
+            android:id="@+id/imgHome"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/des"
+            android:layout_marginLeft="90dp"
+            android:src="@drawable/ouch" />
+
+        <TextView
+            android:id="@+id/btnLogin"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imgHome"
+            android:text="Đăng nhập"
+            android:background="@drawable/border_home2"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

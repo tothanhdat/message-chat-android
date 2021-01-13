@@ -20,7 +20,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-
         ViewPager2 viewPager2 = findViewById(R.id.view_paper2);
         viewPager2.setAdapter(new NavigationAdapter(this));
         TabLayout navigation = findViewById(R.id.navigation);
